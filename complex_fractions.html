@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكسور المركبة | Complex Fractions</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .concept {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        .term {
+            color: #2980b9;
+            font-weight: bold;
+        }
+        .english-term {
+            color: #27ae60;
+            font-style: italic;
+        }
+        .example {
+            background-color: #e8f4f8;
+            padding: 15px;
+            margin: 10px 0;
+            border-right: 4px solid #3498db;
+        }
+        .note {
+            background-color: #fff3cd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        /* Quiz Styles */
+        .quiz-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .quiz-question {
+            font-size: 1.2em;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .quiz-option {
+            padding: 12px;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-option:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .quiz-option.selected {
+            background-color: #3498db;
+            color: white;
+            transform: scale(1.02);
+        }
+
+        .quiz-feedback {
+            margin-top: 1.5rem;
+            padding: 12px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .quiz-feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .quiz-feedback.incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .quiz-progress {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .quiz-results {
+            text-align: center;
+            margin-top: 1.5rem;
+            display: none;
+        }
+
+        .quiz-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .quiz-button:hover {
+            background-color: #2980b9;
+        }
+
+        .method {
+            background-color: #e9ecef;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .fraction {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            margin: 0 5px;
+        }
+        .fraction-line {
+            border-bottom: 1px solid black;
+            display: block;
+            margin: 2px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>الكسور المركبة <span class="english-term">(Complex Fractions)</span></h1>
+
+        <div class="concept">
+            <h2>أنواع الكسور <span class="english-term">(Types of Fractions)</span></h2>
+            <div class="method">
+                <p><span class="term">الكسر العادي</span> <span class="english-term">(Simple Fraction)</span>:</p>
+                <p>هو كسر يتكون من بسط ومقام فقط <span class="english-term">(A fraction with only numerator and denominator)</span></p>
+                <div class="example">
+                    <p>مثال: <span class="fraction">14<span class="fraction-line"></span>3</span></p>
+                </div>
+
+                <p><span class="term">الكسر المركب</span> <span class="english-term">(Mixed Fraction)</span>:</p>
+                <p>هو كسر يتكون من جزء صحيح وجزء كسري <span class="english-term">(A fraction with whole number and fractional parts)</span></p>
+                <div class="example">
+                    <p>مثال: 4<span class="fraction">2<span class="fraction-line"></span>3</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept">
+            <h2>تحويل الكسر العادي إلى كسر مركب <span class="english-term">(Converting Simple to Mixed Fraction)</span></h2>
+            <div class="method">
+                <ol>
+                    <li>نقسم البسط على المقام <span class="english-term">(Divide numerator by denominator)</span></li>
+                    <li>نكتب ناتج القسمة كجزء صحيح <span class="english-term">(Write quotient as whole number)</span></li>
+                    <li>نكتب باقي القسمة في البسط <span class="english-term">(Write remainder as numerator)</span></li>
+                </ol>
+                <div class="example">
+                    <p>مثال: <span class="fraction">14<span class="fraction-line"></span>3</span></p>
+                    <p>14 ÷ 3 = 4 (باقي 2)</p>
+                    <p>∴ <span class="fraction">14<span class="fraction-line"></span>3</span> = 4<span class="fraction">2<span class="fraction-line"></span>3</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept">
+            <h2>تحويل الكسر المركب إلى كسر عادي <span class="english-term">(Converting Mixed to Simple Fraction)</span></h2>
+            <div class="method">
+                <ol>
+                    <li>نضرب الجزء الصحيح في المقام <span class="english-term">(Multiply whole number by denominator)</span></li>
+                    <li>نجمع الناتج مع البسط <span class="english-term">(Add result to numerator)</span></li>
+                    <li>نكتب المجموع في البسط مع نفس المقام <span class="english-term">(Write sum over same denominator)</span></li>
+                </ol>
+                <div class="example">
+                    <p>مثال: 4<span class="fraction">2<span class="fraction-line"></span>3</span></p>
+                    <p>(4 × 3) + 2 = 14</p>
+                    <p>∴ 4<span class="fraction">2<span class="fraction-line"></span>3</span> = <span class="fraction">14<span class="fraction-line"></span>3</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="note">
+            <h3>ملاحظات مهمة <span class="english-term">(Important Notes)</span></h3>
+            <ul>
+                <li>لتحويل كسر عادي إلى مركب، يجب أن يكون البسط أكبر من المقام <span class="english-term">(Numerator must be greater than denominator)</span></li>
+                <li>لإجراء العمليات الحسابية على الكسور المركبة، نحولها أولاً إلى كسور عادية <span class="english-term">(Convert to simple fractions before arithmetic operations)</span></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Quiz Section -->
+    <div class="quiz-container">
+        <h2>اختبر فهمك للكسور المركبة | Test Your Understanding</h2>
+        <div id="quiz">
+            <div class="quiz-question" id="question"></div>
+            <div class="quiz-options" id="options"></div>
+            <div class="quiz-feedback" id="feedback"></div>
+            <div class="quiz-progress" id="progress"></div>
+            <button class="quiz-button" id="next-button" onclick="nextQuestion()" style="display: none;">السؤال التالي</button>
+        </div>
+        <div class="quiz-results" id="results">
+            <h3>نتائج الاختبار</h3>
+            <p id="score"></p>
+            <button class="quiz-button" onclick="restartQuiz()">إعادة الاختبار</button>
+        </div>
+    </div>
+
+    <script>
+        const quizQuestions = [
+            {
+                question: "ما هو الكسر المركب؟",
+                options: [
+                    "كسر يحتوي على كسر في البسط أو المقام أو كليهما",
+                    "كسر بسطه أكبر من مقامه",
+                    "كسر يحتوي على أعداد صحيحة فقط",
+                    "كسر مقامه يساوي واحد"
+                ],
+                correct: 0,
+                explanation: "الكسر المركب هو كسر يحتوي على كسر في البسط أو المقام أو كليهما."
+            },
+            {
+                question: "كيف نبسط الكسر المركب \u2154 ÷ \u00BD؟",
+                options: [
+                    "\u2154 × 2",
+                    "\u2154 × \u00BD",
+                    "\u2154 × \u215E",
+                    "\u2154 ÷ 2"
+                ],
+                correct: 0,
+                explanation: "عند قسمة كسر على كسر، نضرب الكسر الأول في مقلوب الكسر الثاني. لذا \u2154 ÷ \u00BD = \u2154 × 2"
+            },
+            {
+                question: "ما هو ناتج تبسيط الكسر المركب \u00BE ÷ \u215B؟",
+                options: [
+                    "6",
+                    "4",
+                    "3",
+                    "2"
+                ],
+                correct: 0,
+                explanation: "\u00BE ÷ \u215B = \u00BE × \u215F = \u00BE × 8 = 6"
+            },
+            {
+                question: "ما هي الخطوة الأولى في تبسيط الكسر المركب؟",
+                options: [
+                    "تحويل القسمة إلى ضرب بالمقلوب",
+                    "جمع البسط والمقام",
+                    "ضرب البسط في المقام",
+                    "تحويل الكسور إلى أعداد عشرية"
+                ],
+                correct: 0,
+                explanation: "الخطوة الأولى هي تحويل عملية القسمة إلى عملية ضرب باستخدام مقلوب الكسر الثاني."
+            },
+            {
+                question: "أي من العمليات التالية تعتبر كسراً مركباً؟",
+                options: [
+                    "\u00BD ÷ \u2153",
+                    "\u00BD + \u2153",
+                    "\u00BD × \u2153",
+                    "\u00BD - \u2153"
+                ],
+                correct: 0,
+                explanation: "\u00BD ÷ \u2153 يمكن كتابتها ككسر مركب: \u00BD/\u2153"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+
+        function displayQuestion() {
+            const question = quizQuestions[currentQuestion];
+            document.getElementById('question').textContent = question.question;
+            
+            const optionsHtml = question.options.map((option, index) => 
+                `<div class="quiz-option" onclick="selectOption(${index})">${option}</div>`
+            ).join('');
+            
+            document.getElementById('options').innerHTML = optionsHtml;
+            document.getElementById('feedback').style.display = 'none';
+            document.getElementById('next-button').style.display = 'none';
+            document.getElementById('progress').textContent = `السؤال ${currentQuestion + 1} من ${quizQuestions.length}`;
+            answered = false;
+        }
+
+        function selectOption(index) {
+            if (answered) return;
+            
+            const question = quizQuestions[currentQuestion];
+            const options = document.getElementsByClassName('quiz-option');
+            const feedback = document.getElementById('feedback');
+            
+            Array.from(options).forEach(option => option.classList.remove('selected'));
+            options[index].classList.add('selected');
+            
+            if (index === question.correct) {
+                feedback.textContent = 'إجابة صحيحة! ' + question.explanation;
+                feedback.className = 'quiz-feedback correct';
+                score++;
+            } else {
+                feedback.textContent = 'إجابة خاطئة. ' + question.explanation;
+                feedback.className = 'quiz-feedback incorrect';
+            }
+            
+            feedback.style.display = 'block';
+            document.getElementById('next-button').style.display = 'block';
+            answered = true;
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < quizQuestions.length) {
+                displayQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+            const percentage = (score / quizQuestions.length) * 100;
+            document.getElementById('score').textContent = 
+                `لقد أجبت على ${score} من ${quizQuestions.length} أسئلة بشكل صحيح (${percentage}%)`;
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+            displayQuestion();
+        }
+
+        // Initialize quiz when page loads
+        window.onload = function() {
+            displayQuestion();
+        };
+    </script>
+</body>
+</html>

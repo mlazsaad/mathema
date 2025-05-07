@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العمليات على الأعداد العشرية | Decimal Number Operations</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .concept {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        .term {
+            color: #2980b9;
+            font-weight: bold;
+        }
+        .english-term {
+            color: #27ae60;
+            font-style: italic;
+        }
+        .example {
+            background-color: #e8f4f8;
+            padding: 15px;
+            margin: 10px 0;
+            border-right: 4px solid #3498db;
+        }
+        .note {
+            background-color: #fff3cd;
+            padding: 10px;
+            margin: 10px 0;
+            border-right: 4px solid #ffc107;
+        }
+        .method {
+            background-color: #e9ecef;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .decimal-grid {
+            font-family: monospace;
+            white-space: pre;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            direction: ltr;
+            text-align: right;
+        }
+    </style>
+    <style>
+        .quiz-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .quiz-question {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .quiz-option {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .quiz-option:hover {
+            background-color: #f0f0f0;
+        }
+        .quiz-option.selected {
+            background-color: #3498db;
+            color: white;
+        }
+        .quiz-feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .quiz-feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .quiz-feedback.incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .quiz-progress {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .quiz-results {
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+        }
+        .quiz-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .quiz-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>العمليات على الأعداد العشرية <span class="english-term">(Decimal Number Operations)</span></h1>
+
+        <div class="concept">
+            <h2>الجمع والطرح <span class="english-term">(Addition and Subtraction)</span></h2>
+            <div class="method">
+                <p><strong>خطوات الجمع والطرح</strong> <span class="english-term">(Steps for Addition and Subtraction)</span>:</p>
+                <ol>
+                    <li>نكتب الأعداد بشكل عمودي <span class="english-term">(Write numbers vertically)</span></li>
+                    <li>نرتب الفواصل العشرية تحت بعضها <span class="english-term">(Align decimal points)</span></li>
+                    <li>نضيف أصفار عند الحاجة <span class="english-term">(Add zeros if needed)</span></li>
+                </ol>
+                <div class="example">
+                    <p><strong>مثال الجمع</strong> <span class="english-term">(Addition Example)</span>:</p>
+                    <div class="decimal-grid">
+  18.7
+   2.425
+-------
+  21.125</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept">
+            <h2>الضرب <span class="english-term">(Multiplication)</span></h2>
+            <div class="method">
+                <p><strong>خطوات الضرب</strong> <span class="english-term">(Multiplication Steps)</span>:</p>
+                <ol>
+                    <li>نضرب الأعداد كأنها أعداد صحيحة <span class="english-term">(Multiply as whole numbers)</span></li>
+                    <li>نجمع عدد المنازل العشرية في العددين <span class="english-term">(Count decimal places)</span></li>
+                    <li>نضع الفاصلة في الناتج من اليمين <span class="english-term">(Place decimal point from right)</span></li>
+                </ol>
+                <div class="example">
+                    <p><strong>مثال</strong>: 1.725 × 38.75</p>
+                    <div class="decimal-grid">
+   1.725
+  38.750
+--------
+   8625
+  12075
+ 51750
+69000
+--------
+ 66.84375</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept">
+            <h2>القسمة <span class="english-term">(Division)</span></h2>
+            <div class="method">
+                <p><strong>خطوات القسمة</strong> <span class="english-term">(Division Steps)</span>:</p>
+                <ol>
+                    <li>نزيح الفاصلة العشرية إلى اليمين <span class="english-term">(Move decimal point right)</span></li>
+                    <li>نضيف أصفار عند الحاجة <span class="english-term">(Add zeros if needed)</span></li>
+                    <li>نقسم كأعداد صحيحة <span class="english-term">(Divide as whole numbers)</span></li>
+                </ol>
+                <div class="example">
+                    <p><strong>مثال</strong>: 2.5 ÷ 1.25</p>
+                    <p>2.5 = 250 ÷ 100</p>
+                    <p>1.25 = 125 ÷ 100</p>
+                    <p>∴ 2.5 ÷ 1.25 = 250 ÷ 125 = 2</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="note">
+            <h3>ملاحظات مهمة <span class="english-term">(Important Notes)</span></h3>
+            <ul>
+                <li>يمكن تحويل العدد العشري إلى كسر عادي بقوى العشرة <span class="english-term">(Convert decimal to fraction using powers of 10)</span></li>
+                <li>يمكن حذف الأصفار غير المؤثرة بعد الفاصلة العشرية <span class="english-term">(Remove trailing zeros after decimal)</span></li>
+                <li>عند القسمة، نزيح الفاصلة في البسط والمقام نفس عدد المنازل <span class="english-term">(Move decimal same places in numerator and denominator)</span></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Quiz Section -->
+    <div class="quiz-container">
+        <h2>اختبر معرفتك | Test Your Knowledge</h2>
+        <div id="quiz">
+            <div class="quiz-question" id="question"></div>
+            <div class="quiz-options" id="options"></div>
+            <div class="quiz-feedback" id="feedback"></div>
+            <div class="quiz-progress" id="progress"></div>
+            <button class="quiz-button" id="next-button" onclick="nextQuestion()" style="display: none;">السؤال التالي</button>
+        </div>
+        <div class="quiz-results" id="results">
+            <h3>نتائج الاختبار</h3>
+            <p id="score"></p>
+            <button class="quiz-button" onclick="restartQuiz()">إعادة الاختبار</button>
+        </div>
+    </div>
+
+    <script>
+        const quizQuestions = [
+            {
+                question: "كيف نجمع 23.45 و 12.67؟",
+                options: ["36.12", "35.12", "36.02", "36.22"],
+                correct: 0,
+                explanation: "نصف الأرقام العشرية بشكل عمودي ونجمع من اليمين إلى اليسار: 23.45 + 12.67 = 36.12"
+            },
+            {
+                question: "عند ضرب عدد عشري في 10، كم خانة نحرك الفاصلة العشرية إلى اليمين؟",
+                options: ["خانة واحدة", "خانتين", "ثلاث خانات", "لا نحرك الفاصلة"],
+                correct: 0,
+                explanation: "عند الضرب في 10، نحرك الفاصلة العشرية خانة واحدة إلى اليمين"
+            },
+            {
+                question: "ما هو ناتج 5.6 × 0.4؟",
+                options: ["2.24", "2.04", "22.4", "0.224"],
+                correct: 0,
+                explanation: "نضرب 56 × 4 = 224، ثم نعد الأرقام العشرية (1+1=2) ونضع الفاصلة من اليسار: 2.24"
+            },
+            {
+                question: "عند قسمة عدد عشري على 100، كم خانة نحرك الفاصلة العشرية إلى اليسار؟",
+                options: ["خانتين", "خانة واحدة", "ثلاث خانات", "لا نحرك الفاصلة"],
+                correct: 0,
+                explanation: "عند القسمة على 100، نحرك الفاصلة العشرية خانتين إلى اليسار"
+            },
+            {
+                question: "ما هو ناتج 45.67 - 23.45؟",
+                options: ["22.22", "21.22", "22.12", "21.12"],
+                correct: 0,
+                explanation: "نصف الأرقام بشكل عمودي ونطرح: 45.67 - 23.45 = 22.22"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+
+        function displayQuestion() {
+            const question = quizQuestions[currentQuestion];
+            document.getElementById('question').textContent = question.question;
+            
+            const optionsHtml = question.options.map((option, index) => 
+                `<div class="quiz-option" onclick="selectOption(${index})">${option}</div>`
+            ).join('');
+            
+            document.getElementById('options').innerHTML = optionsHtml;
+            document.getElementById('feedback').style.display = 'none';
+            document.getElementById('next-button').style.display = 'none';
+            document.getElementById('progress').textContent = `السؤال ${currentQuestion + 1} من ${quizQuestions.length}`;
+            answered = false;
+        }
+
+        function selectOption(index) {
+            if (answered) return;
+            
+            const question = quizQuestions[currentQuestion];
+            const options = document.getElementsByClassName('quiz-option');
+            const feedback = document.getElementById('feedback');
+            
+            // Remove any previous selection
+            Array.from(options).forEach(option => option.classList.remove('selected'));
+            
+            // Select current option
+            options[index].classList.add('selected');
+            
+            // Show feedback
+            if (index === question.correct) {
+                feedback.textContent = 'إجابة صحيحة! ' + question.explanation;
+                feedback.className = 'quiz-feedback correct';
+                score++;
+            } else {
+                feedback.textContent = 'إجابة خاطئة. ' + question.explanation;
+                feedback.className = 'quiz-feedback incorrect';
+            }
+            
+            feedback.style.display = 'block';
+            document.getElementById('next-button').style.display = 'block';
+            answered = true;
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < quizQuestions.length) {
+                displayQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+            const percentage = (score / quizQuestions.length) * 100;
+            document.getElementById('score').textContent = 
+                `لقد أجبت على ${score} من ${quizQuestions.length} أسئلة بشكل صحيح (${percentage}%)`;
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+            displayQuestion();
+        }
+
+        // Initialize quiz when page loads
+        window.onload = function() {
+            displayQuestion();
+        };
+    </script>
+</body>
+</html>

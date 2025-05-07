@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أساسيات علم الجبر - الصفحة الرئيسية</title>
+    <style>
+        :root {
+            --primary-color: #34495e;
+            --secondary-color: #3498db;
+            --accent-color: #16a085;
+            --background-color: #ecf0f1;
+            --text-color: #2c3e50;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            --gradient-primary: linear-gradient(135deg, #34495e, #2c3e50);
+            --card-bg: rgba(255, 255, 255, 0.98);
+            --note-bg: #e8f6f3;
+            --note-border: #16a085;
+            --example-bg: #f7f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius);
+            color: white;
+            box-shadow: var(--box-shadow);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .lesson-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .lesson-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .lesson-list {
+            list-style: none;
+        }
+
+        .lesson-list li {
+            margin-bottom: 1rem;
+        }
+
+        .lesson-link {
+            display: block;
+            padding: 1rem;
+            background: var(--example-bg);
+            border-radius: var(--border-radius);
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-right: 4px solid var(--secondary-color);
+        }
+
+        .lesson-link:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        .lesson-number {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>أساسيات علم الجبر</h1>
+            <p>مرحباً بك في دروس الجبر الأساسية</p>
+        </div>
+
+        <div class="lessons-grid">
+            <div class="lesson-section">
+                <h2>الدروس 1-4</h2>
+                <ul class="lesson-list">
+                    <li>
+                        <a href="lesson1/number_sets.html" class="lesson-link">
+                            <span class="lesson-number">001</span>
+                            مجموعات الأعداد
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lesson2/euclidean_division.html" class="lesson-link">
+                            <span class="lesson-number">002</span>
+                            القسمة الإقليدية والعشرية
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lesson3/sets_part1.html" class="lesson-link">
+                            <span class="lesson-number">003</span>
+                            المجموعات - الجزء الأول
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lesson3/sets_part2.html" class="lesson-link">
+                            <span class="lesson-number">004</span>
+                            المجموعات - الجزء الثاني
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lesson4/fractions.html" class="lesson-link">
+                            <span class="lesson-number">008</span>
+                            الكسور
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="lesson-section">
+                <h2>الدروس 5-7</h2>
+                <ul class="lesson-list">
+                    <li>
+                        <a href="lesson5/powers_and_properties.html" class="lesson-link">
+                            <span class="lesson-number">009</span>
+                            القوى وخصائصها
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lesson5/roots_in_mathematics.html" class="lesson-link">
+                            <span class="lesson-number">010</span>
+                            الجذور في الرياضيات
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lesson7/prime_factorization.html" class="lesson-link">
+                            <span class="lesson-number">011</span>
+                            التحليل إلى عوامل أولية
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lesson7/greatest_common_divisor.html" class="lesson-link">
+                            <span class="lesson-number">012</span>
+                            القاسم المشترك الأكبر
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="lesson-section">
+                <h2>الدروس 8-11</h2>
+                <ul class="lesson-list">
+                    <li>
+                        <a href="lesson9/least_common_multiple.html" class="lesson-link">
+                            <span class="lesson-number">013</span>
+                            المضاعف المشترك الأصغر
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lesson10/complex_fractions.html" class="lesson-link">
+                            <span class="lesson-number">014</span>
+                            الكسور المركبة
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lesson11/decimal_operations.html" class="lesson-link">
+                            <span class="lesson-number">015</span>
+                            العمليات على الأعداد العشرية
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
