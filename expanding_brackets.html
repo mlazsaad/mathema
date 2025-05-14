@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فك الأقواس - النشر والاختزال</title>
+    <script>
+        function checkAnswer(questionId, selectedAnswer, correctAnswer) {
+            const resultElement = document.getElementById(`result-${questionId}`);
+            const allOptions = document.getElementsByName(`q${questionId}`);
+            
+            allOptions.forEach(option => option.disabled = true);
+            
+            if (selectedAnswer === correctAnswer) {
+                resultElement.textContent = 'أحسنت! إجابة صحيحة';
+                resultElement.style.color = '#27ae60';
+            } else {
+                resultElement.textContent = 'حاول مرة أخرى';
+                resultElement.style.color = '#c0392b';
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --primary-color: #34495e;
+            --secondary-color: #3498db;
+            --accent-color: #16a085;
+            --background-color: #ecf0f1;
+            --text-color: #2c3e50;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            --gradient-primary: linear-gradient(135deg, #34495e, #2c3e50);
+            --card-bg: rgba(255, 255, 255, 0.98);
+            --note-bg: #e8f6f3;
+            --note-border: #16a085;
+            --example-bg: #f7f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius);
+            color: white;
+            box-shadow: var(--box-shadow);
+        }
+
+        .content {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .example {
+            background: var(--example-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+        }
+
+        .note {
+            background: var(--note-bg);
+            border-right: 4px solid var(--note-border);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: var(--border-radius);
+        }
+
+        .math {
+            direction: ltr;
+            text-align: right;
+            font-family: 'Times New Roman', serif;
+            padding: 0.5rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .question-box {
+            background: var(--example-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+            border: 1px solid var(--secondary-color);
+        }
+
+        .options {
+            margin: 1rem 0;
+        }
+
+        .option {
+            margin: 0.5rem 0;
+        }
+
+        .result {
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .english-term {
+            color: var(--secondary-color);
+            font-style: italic;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>فك الأقواس - النشر والاختزال <span class="english-term">(Expanding Brackets)</span></h1>
+            <p>بسم الله الرحمن الرحيم</p>
+        </div>
+
+        <div class="content">
+            <h2>مفهوم فك الأقواس <span class="english-term">(Expanding Brackets Concept)</span></h2>
+            <p>فك الأقواس هو عبارة عن ضرب العنصر الملاسق بالأقواس بجميع العناصر التي داخل الأقواس بهدف التخلص من هذين القوسين.</p>
+
+            <div class="example">
+                <h3>المثال الأول:</h3>
+                <p>لنأخذ المثال التالي:</p>
+                <p class="math">2x + 3(x - 2) - 5</p>
+                <p>بعد فك الأقواس:</p>
+                <p class="math">2x + 3x - 6 - 5</p>
+                <p>وبعد الاختزال:</p>
+                <p class="math">5x - 11</p>
+            </div>
+
+            <div class="note">
+                <h3>قواعد مهمة <span class="english-term">(Important Rules)</span></h3>
+                <ul>
+                    <li>نضرب العامل خارج القوس بكل حد داخل القوس</li>
+                    <li>نحافظ على إشارات العمليات عند الضرب</li>
+                    <li>نجمع الحدود المتشابهة بعد فك الأقواس</li>
+                </ul>
+            </div>
+
+            <div class="example">
+                <h3>المثال الثاني:</h3>
+                <p>لنحل المثال التالي:</p>
+                <p class="math">(2 + x)(-x + 2y)</p>
+                <p>بعد فك الأقواس:</p>
+                <p class="math">-x² - 2x + 2xy + 4y</p>
+            </div>
+
+            <div class="question-box">
+                <h3>تمرين 1:</h3>
+                <p>ما ناتج فك الأقواس في التعبير التالي: 2(x + 3)</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q1" onclick="checkAnswer(1, 'a', 'b')"> أ) 2x + 3
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q1" onclick="checkAnswer(1, 'b', 'b')"> ب) 2x + 6
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q1" onclick="checkAnswer(1, 'c', 'b')"> ج) x + 6
+                    </div>
+                </div>
+                <p id="result-1" class="result"></p>
+            </div>
+
+            <div class="question-box">
+                <h3>تمرين 2:</h3>
+                <p>ما ناتج اختزال التعبير: 3x + 2x - x</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q2" onclick="checkAnswer(2, 'a', 'c')"> أ) 6x
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q2" onclick="checkAnswer(2, 'b', 'c')"> ب) 3x
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q2" onclick="checkAnswer(2, 'c', 'c')"> ج) 4x
+                    </div>
+                </div>
+                <p id="result-2" class="result"></p>
+            </div>
+
+            <div class="question-box">
+                <h3>تمرين 3:</h3>
+                <p>ما ناتج فك الأقواس واختزال التعبير: -(x + 2) + 3(x - 1)</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q3" onclick="checkAnswer(3, 'a', 'b')"> أ) 4x - 1
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q3" onclick="checkAnswer(3, 'b', 'b')"> ب) 2x - 5
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q3" onclick="checkAnswer(3, 'c', 'b')"> ج) 2x - 3
+                    </div>
+                </div>
+                <p id="result-3" class="result"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
