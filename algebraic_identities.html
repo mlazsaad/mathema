@@ -97,6 +97,40 @@
             margin: 0.5rem 0;
         }
 
+        .step-by-step {
+            border-right: 3px solid var(--accent-color);
+            padding: 0.5rem 1rem;
+            margin: 1rem 0;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 0.25rem;
+            border-radius: 4px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .visual-box {
+            border: 2px solid var(--accent-color);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+            background: #f8f9fa;
+        }
+
+        .tips {
+            background-color: #e1f5fe;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+        }
+
         .identity {
             border: 1px solid var(--accent-color);
             padding: 1rem;
@@ -157,31 +191,74 @@
                 <p class="math">(a + b)(a - b) = a² - b²</p>
             </div>
 
-            <div class="note">
-                <h3>ملاحظة مهمة</h3>
-                <p>تستخدم المتطابقات التربيعية في حل المعادلات من الدرجة الثانية في المنهاج السوري.</p>
-            </div>
 
             <h2>المتطابقات التكعيبية <span class="english-term">(Cubic Identities)</span></h2>
 
+            <div class="note">
+                <h3>ملاحظة هامة <span class="english-term">(Important Note)</span></h3>
+                <p>المتطابقات التكعيبية لم تستخدم في المنهاج السوري ولكن من المهم التعرف عليها.</p>
+            </div>
+
             <div class="identity">
-                <h3>المتطابقة الأولى: مكعب مجموع حدين</h3>
+                <h3>المتطابقة الأولى: مكعب مجموع حدين <span class="english-term">(Cube of Sum)</span></h3>
                 <p class="math">(a + b)³ = a³ + 3a²b + 3ab² + b³</p>
+                <div class="step-by-step">
+                    <p>ملاحظات:</p>
+                    <ul>
+                        <li>الحد الأول: مكعب الأول (a³)</li>
+                        <li>الحد الثاني: ثلاثة أضعاف مربع الأول في الثاني (3a²b)</li>
+                        <li>الحد الثالث: ثلاثة أضعاف الأول في مربع الثاني (3ab²)</li>
+                        <li>الحد الرابع: مكعب الثاني (b³)</li>
+                    </ul>
+                </div>
+                <div class="example">
+                    <p>مثال: (x + 2)³</p>
+                    <ol>
+                        <li>a = x, b = 2</li>
+                        <li>x³ + 3x²(2) + 3x(2²) + 2³</li>
+                        <li>x³ + 6x² + 12x + 8</li>
+                    </ol>
+                </div>
             </div>
 
             <div class="identity">
-                <h3>المتطابقة الثانية: مكعب فرق حدين</h3>
+                <h3>المتطابقة الثانية: مكعب فرق حدين <span class="english-term">(Cube of Difference)</span></h3>
                 <p class="math">(a - b)³ = a³ - 3a²b + 3ab² - b³</p>
+                <div class="note">
+                    <p>لاحظ الفرق بين مكعب المجموع ومكعب الفرق:</p>
+                    <ul>
+                        <li>الإشارات تتناوب في مكعب الفرق: (+, -, +, -)</li>
+                        <li>جميع الإشارات موجبة في مكعب المجموع: (+, +, +, +)</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="identity">
-                <h3>المتطابقة الثالثة: مجموع مكعبي حدين</h3>
+                <h3>المتطابقة الثالثة: مجموع مكعبي حدين <span class="english-term">(Sum of Cubes)</span></h3>
                 <p class="math">a³ + b³ = (a + b)(a² - ab + b²)</p>
+                <div class="visual-box">
+                    <p>مثال تطبيقي:</p>
+                    <p>لحساب 8 + 27</p>
+                    <ol>
+                        <li>8 = 2³, 27 = 3³</li>
+                        <li>2³ + 3³ = (2 + 3)(2² - 2×3 + 3²)</li>
+                        <li>= 5(4 - 6 + 9)</li>
+                        <li>= 5 × 7 = 35</li>
+                    </ol>
+                </div>
             </div>
 
             <div class="identity">
-                <h3>المتطابقة الرابعة: فرق مكعبي حدين</h3>
+                <h3>المتطابقة الرابعة: فرق مكعبي حدين <span class="english-term">(Difference of Cubes)</span></h3>
                 <p class="math">a³ - b³ = (a - b)(a² + ab + b²)</p>
+                <div class="tips">
+                    <h4>ملاحظات مهمة:</h4>
+                    <ul>
+                        <li>لاحظ الفرق بين مجموع وفرق المكعبات</li>
+                        <li>في مجموع المكعبات: الإشارة الوسطى سالبة (-)</li>
+                        <li>في فرق المكعبات: جميع الإشارات موجبة (+)</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="example">
@@ -210,18 +287,58 @@
                 </ol>
             </div>
 
-            <div class="note">
-                <h3>ملاحظات مهمة للتطبيق:</h3>
-                <ul>
-                    <li>عند حل المسائل، ابحث عن الأنماط التي تشبه المتطابقات المعروفة</li>
-                    <li>يمكن استخدام المتطابقات للتحقق من صحة الحل</li>
-                    <li>المتطابقات تساعد في تبسيط العبارات الجبرية المعقدة</li>
-                </ul>
+            <div class="tips">
+                <h3>نصائح للتطبيق العملي <span class="english-term">(Practical Tips)</span></h3>
+                <div class="grid-2">
+                    <div>
+                        <h4>التعرف على المتطابقة:</h4>
+                        <ul>
+                            <li>ابحث عن الأنماط المألوفة</li>
+                            <li>حدد الحدود الجبرية الرئيسية</li>
+                            <li>تعرف على شكل المتطابقة</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>تطبيق المتطابقة:</h4>
+                        <ul>
+                            <li>اكتب الحدود بشكل منظم</li>
+                            <li>تحقق من الإشارات</li>
+                            <li>اجمع الحدود المتشابهة</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="visual-box">
+                    <h4>أمثلة من الحياة اليومية:</h4>
+                    <div class="grid-2">
+                        <div>
+                            <p>حساب مساحة الأرض:</p>
+                            <p class="math">الطول = a + b</p>
+                            <p class="math">العرض = a + b</p>
+                            <p class="math">المساحة = (a + b)²</p>
+                        </div>
+                        <div>
+                            <p>حساب الفرق بين مربعين:</p>
+                            <p class="math">مثل: 101² - 99²</p>
+                            <p class="math">= (101 + 99)(101 - 99)</p>
+                            <p class="math">= 200 × 2 = 400</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="question-box">
                 <h3>تمرين 1: <span class="english-term">(Exercise 1)</span></h3>
                 <p>ما ناتج (x + 2)² باستخدام المتطابقة التربيعية الأولى؟</p>
+                <div class="step-by-step">
+                    <p>طريقة الحل:</p>
+                    <ol>
+                        <li>نستخدم المتطابقة: (a + b)² = a² + 2ab + b²</li>
+                        <li>حيث a = x و b = 2</li>
+                        <li>نعوض: x² + 2(x)(2) + 2²</li>
+                        <li>نبسط: x² + 4x + 4</li>
+                    </ol>
+                </div>
                 <div class="options">
                     <div class="option">
                         <input type="radio" name="q1" onclick="checkAnswer(1, 'a', 'b')"> أ) x² + 2x + 2
