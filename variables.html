@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المتغيرات في الرياضيات - دروس الجبر</title>
+    <script>
+        function checkAnswer(questionId, selectedAnswer, correctAnswer) {
+            const resultElement = document.getElementById(`result-${questionId}`);
+            const allOptions = document.getElementsByName(`q${questionId}`);
+            
+            allOptions.forEach(option => option.disabled = true);
+            
+            if (selectedAnswer === correctAnswer) {
+                resultElement.textContent = 'أحسنت! إجابة صحيحة';
+                resultElement.style.color = '#27ae60';
+            } else {
+                resultElement.textContent = 'حاول مرة أخرى';
+                resultElement.style.color = '#c0392b';
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --primary-color: #34495e;
+            --secondary-color: #3498db;
+            --accent-color: #16a085;
+            --background-color: #ecf0f1;
+            --text-color: #2c3e50;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            --gradient-primary: linear-gradient(135deg, #34495e, #2c3e50);
+            --card-bg: rgba(255, 255, 255, 0.98);
+            --note-bg: #e8f6f3;
+            --note-border: #16a085;
+            --example-bg: #f7f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius);
+            color: white;
+            box-shadow: var(--box-shadow);
+        }
+
+        .content {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .example {
+            background: var(--example-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+        }
+
+        .note {
+            background: var(--note-bg);
+            border-right: 4px solid var(--note-border);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: var(--border-radius);
+        }
+
+        .english-term {
+            color: var(--secondary-color);
+            font-style: italic;
+            margin-right: 8px;
+        }
+
+        .question-box {
+            background: var(--example-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+        }
+
+        .options {
+            margin-top: 1rem;
+        }
+
+        .option {
+            margin: 0.5rem 0;
+        }
+
+        input[type="radio"] {
+            margin-left: 0.5rem;
+        }
+
+        .result {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>المتغيرات في الرياضيات <span class="english-term">(Variables in Mathematics)</span></h1>
+            <p>بسم الله الرحمن الرحيم</p>
+        </div>
+
+        <div class="content">
+            <h2>أهداف الدرس</h2>
+            <ul>
+                <li>التعرف على مفهوم التعابير الرياضية وأنواعها</li>
+                <li>فهم مكونات التعابير: حدود، عوامل، معاملات</li>
+                <li>تعلم تبسيط التعابير وتوحيد الكسور المتشابهة</li>
+                <li>تعلم تحليل التعابير إلى عوامل (فكّ) واستعمال القوانين الخاصة</li>
+                <li>تطبيق التعابير في التقييم والحساب</li>
+            </ul>
+
+            <div class="note">
+                <p>الفرق الرئيسي بين الحساب والجبر هو وجود المجهول أو المتغير في الجبر.</p>
+            </div>
+
+            <h2>الفرق بين الحساب والجبر</h2>
+            <div class="example">
+                <p><strong>في الحساب:</strong> العملية 5 + 6 = 11</p>
+                <p>العنصر المجهول الوحيد هو ناتج العملية الحسابية.</p>
+                <p><strong>في الجبر:</strong> العملية x - 6 = 5</p>
+                <p>نبحث عن قيمة المجهول x التي تحقق المعادلة.</p>
+            </div>
+
+            <h2>تعريف التعابير الرياضية</h2>
+            <p>التعبير الرياضي هو مجموعة من الأعداد والمتغيرات مرتبطةً بعمليات جبرية (جمع، طرح، ضرب، قسمة، أسس).</p>
+            <div class="note">
+                <p>لا يحتوي التعبير على علامة (=). إذا وُجدت علامة مساواة يصبح معادلة.</p>
+            </div>
+
+            <div class="example">
+                <h3>أمثلة على التعابير الرياضية:</h3>
+                <ul>
+                    <li>3x² + 5xy - 7</li>
+                    <li>(2a³b + 4c)/3</li>
+                </ul>
+            </div>
+   <div class="example">
+                <h3>أمثلة على التعابير الجبرية:</h3>
+                <ul>
+                    <li>abc + ef بدلاً من a × b × c + e × f</li>
+                    <li>5x + 15xy بدلاً من 5 × x + 15 × x × y</li>
+                </ul>
+                <p class="note">ملاحظة: عند ضرب عددين معلومين مثل 5 × 7، يجب وضع علامة الضرب أو استخدام الأقواس.</p>
+            </div>
+            <h2>مكونات التعبير</h2>
+            <div class="note">
+                <ul>
+                    <li><strong>الحدود (Terms):</strong> كل عبارة مفصولة بعلامة + أو –</li>
+                    <li><strong>العوامل (Factors):</strong> ما يُضرب داخل الحد</li>
+                    <li><strong>المعامل (Coefficient):</strong> العدد المُرافق للمتغيرات داخل الحد</li>
+                </ul>
+            </div>
+
+            <div class="example">
+                <h3>مثال على المكونات:</h3>
+                <p>في التعبير: 3x² + 5xy - 7</p>
+                <ul>
+                    <li>الحدود هي: 3x², 5xy, -7</li>
+                    <li>في الحد 5xy: العوامل هي 5, x, y</li>
+                    <li>المعامل في 3x² هو 3</li>
+                </ul>
+            </div>
+
+            <h2>أنواع التعابير</h2>
+            <div class="note">
+                <ul>
+                    <li><strong>تعابير خطية (Degree 1):</strong> أعلى أس للمتغير = 1
+                        <br>مثال: 4x - 9, 2a + 3b</li>
+                    <li><strong>تعابير تربيعية (Degree 2):</strong> أعلى أس = 2
+                        <br>مثال: x² - 5x + 6</li>
+                    <li><strong>تعابير كثيرة الحدود (Polynomials):</strong> مجموع عدة حدود بأسس صحيحة غير سالبة
+                        <br>مثال: 2x³ - x² + 4x - 7</li>
+                    <li><strong>تعابير كسرية (Rational Expressions):</strong> نسبة تعبيرين كثيري حدود
+                        <br>مثال: (3x + 2)/(x - 1)</li>
+                </ul>
+            </div>
+
+            <h2>تبسيط التعابير</h2>
+            <div class="example">
+                <h3>جمع وطرح الحدود المتشابهة:</h3>
+                <p>مثال: (3x² + 5x - 2) + (4x² - x + 7)</p>
+                <p>الحل:</p>
+                <ul>
+                    <li>نجمع الحدود المتشابهة: (3x² + 4x²) + (5x - x) + (-2 + 7)</li>
+                    <li>الناتج: 7x² + 4x + 5</li>
+                </ul>
+            </div>
+
+            <h2>تحليل التعابير إلى عوامل</h2>
+            <div class="note">
+                <h3>القوانين الأساسية:</h3>
+                <ul>
+                    <li><strong>فرق مربعين:</strong> a² - b² = (a - b)(a + b)</li>
+                    <li><strong>مربع الحدين:</strong>
+                        <br>a² + 2ab + b² = (a + b)²
+                        <br>a² - 2ab + b² = (a - b)²</li>
+                </ul>
+            </div>
+
+            <h2>مفهوم المتغير <span class="english-term">(Variable)</span></h2>
+            <p>المتغير هو الكمية التي يمكن أن تتغير، ونستخدم الحروف لتمثيل هذه الكميات المتغيرة وغير المعروفة مثل X أو Y أو Z.</p>
+
+            <div class="note">
+                <p>كل حرف من هذه الحروف يمكن أن يأخذ قيماً مختلفة. فمثلاً X يمكن أن تكون:</p>
+                <ul>
+                    <li>10</li>
+                    <li>1</li>
+                    <li>0</li>
+                    <li>-1</li>
+                    <li>أي قيمة أخرى</li>
+                </ul>
+            </div>
+
+            <div class="example">
+                <h3>مثال تطبيقي:</h3>
+                <p>عامل في محل مبيعات:</p>
+                <ul>
+                    <li>الراتب الأساسي: 5 دولار في الساعة (ثابت)</li>
+                    <li>العمولة: دولار واحد لكل 100 دولار مبيعات (متغير)</li>
+                </ul>
+                <p>التعبير الجبري للراتب في الساعة: X + 5</p>
+                <p>حيث X تمثل العمولة المتغيرة حسب المبيعات</p>
+            </div>
+
+            <h2>خصائص المتغيرات</h2>
+            <div class="note">
+                <ul>
+                    <li>يمكن استخدام أي حرف للتعبير عن المتغير (X, Y, Z, A, ...)</li>
+                    <li>المتغير يمكن أن يكون موجباً أو سالباً</li>
+                    <li>قيمة المتغير تعتمد على السياق والمعطيات</li>
+                </ul>
+            </div>
+
+
+            <h2>العمليات الحسابية في الجبر</h2>
+            <div class="note">
+                <p>عند كتابة العمليات الحسابية بين المتغيرات a و b:</p>
+                <ul>
+                    <li>الجمع: a + b</li>
+                    <li>الطرح: a - b</li>
+                    <li>الضرب: ab (بدون علامة ضرب)</li>
+                    <li>القسمة: يمكن كتابتها ككسر (a/b)</li>
+                </ul>
+            </div>
+
+         
+
+            <h2>المعادلة الجبرية <span class="english-term">(Algebraic Equation)</span></h2>
+            <p>المعادلة الجبرية هي مساواة بين طرفين أو تعبيرين جبريين تحوي رموزاً مجهولة.</p>
+
+            <div class="example">
+                <h3>مثال على حل المعادلات:</h3>
+                <p>المعادلة: x + 6 = 8</p>
+                <p>الحل: نبحث عن عدد يضاف إلى 6 ليعطي 8</p>
+                <p>إذن: x = 2</p>
+            </div>
+
+            <div class="note">
+                <p>علم الجبر له تطبيقات مهمة في:</p>
+                <ul>
+                    <li>العلوم</li>
+                    <li>الهندسة</li>
+                    <li>الاقتصاد</li>
+                    <li>البرمجة</li>
+                </ul>
+            </div>
+            <div class="question-box">
+                <h3>تمرين 1:</h3>
+                <p>إذا كان X + Y = 4، وكانت X = 1، فما هي قيمة Y؟</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q1" onclick="checkAnswer(1, '1', '3')"> 1
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q1" onclick="checkAnswer(1, '2', '3')"> 2
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q1" onclick="checkAnswer(1, '3', '3')"> 3
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q1" onclick="checkAnswer(1, '4', '3')"> 4
+                    </div>
+                </div>
+                <div id="result-1" class="result"></div>
+            </div>
+
+            <div class="question-box">
+                <h3>تمرين 2:</h3>
+                <p>إذا كان -X = 5، فما هي قيمة X؟</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q2" onclick="checkAnswer(2, '5', '-5')"> 5
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q2" onclick="checkAnswer(2, '-5', '-5')"> -5
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q2" onclick="checkAnswer(2, '0', '-5')"> 0
+                    </div>
+                </div>
+                <div id="result-2" class="result"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
