@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المتباينات - دروس الجبر</title>
+    <script>
+        function checkAnswer(questionId, selectedAnswer, correctAnswer) {
+            const resultElement = document.getElementById(`result-${questionId}`);
+            const allOptions = document.getElementsByName(`q${questionId}`);
+            
+            allOptions.forEach(option => option.disabled = true);
+            
+            if (selectedAnswer === correctAnswer) {
+                resultElement.textContent = 'أحسنت! إجابة صحيحة';
+                resultElement.style.color = '#27ae60';
+            } else {
+                resultElement.textContent = 'حاول مرة أخرى';
+                resultElement.style.color = '#c0392b';
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --primary-color: #34495e;
+            --secondary-color: #3498db;
+            --accent-color: #16a085;
+            --background-color: #ecf0f1;
+            --text-color: #2c3e50;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            --gradient-primary: linear-gradient(135deg, #34495e, #2c3e50);
+            --card-bg: rgba(255, 255, 255, 0.98);
+            --note-bg: #e8f6f3;
+            --note-border: #16a085;
+            --example-bg: #f7f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            margin: 30px 0 15px;
+        }
+
+        h3 {
+            color: var(--accent-color);
+            margin: 20px 0 10px;
+        }
+
+        .english-term {
+            font-size: 0.8em;
+            color: var(--secondary-color);
+        }
+
+        .note {
+            background-color: var(--note-bg);
+            border-right: 4px solid var(--note-border);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+        }
+
+        .example {
+            background-color: var(--example-bg);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid var(--primary-color);
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .number-line {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .number-line img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        ul {
+            padding-right: 20px;
+        }
+
+        .practice {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>المتباينات <span class="english-term">(Inequalities)</span></h1>
+            <p>بسم الله الرحمن الرحيم</p>
+        </div>
+
+        <h2>🧠 أولاً: التمهيد – الفرق بين المعادلة والمتباينة</h2>
+        <table>
+            <tr>
+                <th>المعادلة</th>
+                <th>المتباينة</th>
+            </tr>
+            <tr>
+                <td>تحتوي على علامة "يساوي" (=)</td>
+                <td>تحتوي على علامة >، <، ≥، ≤</td>
+            </tr>
+            <tr>
+                <td>تمثّل علاقة دقيقة وثابتة</td>
+                <td>تمثّل علاقة غير دقيقة (قيمة أكبر أو أصغر من أخرى)</td>
+            </tr>
+            <tr>
+                <td>مثل: 2x + 1 = 5</td>
+                <td>مثل: 2x + 1 > 5</td>
+            </tr>
+        </table>
+
+        <h2>🧾 ثانياً: رموز المتباينات ومعانيها</h2>
+        <table>
+            <tr>
+                <th>الرمز</th>
+                <th>المعنى</th>
+                <th>النطق</th>
+            </tr>
+            <tr>
+                <td>></td>
+                <td>أكبر من</td>
+                <td>x > 3: أي x أكبر من 3</td>
+            </tr>
+            <tr>
+                <td><</td>
+                <td>أصغر من</td>
+                <td>x < 5: أي x أصغر من 5</td>
+            </tr>
+            <tr>
+                <td>≥</td>
+                <td>أكبر من أو يساوي</td>
+                <td>x ≥ 7: أي x أكبر من أو يساوي 7</td>
+            </tr>
+            <tr>
+                <td>≤</td>
+                <td>أصغر من أو يساوي</td>
+                <td>x ≤ 2: أي x أصغر من أو يساوي 2</td>
+            </tr>
+        </table>
+
+        <h2>🧮 ثالثاً: تمثيل المتباينات على خط الأعداد</h2>
+        <div class="example">
+            <h3>تمثيل x > 3:</h3>
+            <p>نضع دائرة فارغة على العدد 3 (لأنها غير مشمولة).</p>
+            <p>نرسم سهماً إلى اليمين (لأن x أكبر).</p>
+
+            <h3>تمثيل x ≤ -2:</h3>
+            <p>نضع دائرة مظللة على العدد -2 (لأنها مشمولة).</p>
+            <p>نرسم سهماً إلى اليسار (لأن x أصغر أو يساوي).</p>
+        </div>
+
+        <div class="note">
+            <h3>⚠️ قاعدة:</h3>
+            <ul>
+                <li>دائرة مظللة (●) إذا كان العدد مشمولاً (≥ أو ≤)</li>
+                <li>دائرة مفتوحة (○) إذا لم يكن مشمولاً (> أو <)</li>
+            </ul>
+        </div>
+
+        <h2>🔢 رابعاً: حل المتباينات البسيطة</h2>
+        <div class="example">
+            <h3>مثال 1:</h3>
+            <p>x + 4 < 10</p>
+            <p>نطرح 4 من الطرفين:</p>
+            <p>x < 6</p>
+
+            <h3>مثال 2:</h3>
+            <p>3x ≥ 12</p>
+            <p>نقسم على 3:</p>
+            <p>x ≥ 4</p>
+        </div>
+
+        <h2>🔁 خامساً: القاعدة الذهبية عند الضرب أو القسمة في عدد سالب</h2>
+        <div class="note">
+            <p>عند الضرب أو القسمة في عدد سالب، نعكس إشارة المتباينة.</p>
+        </div>
+        <div class="example">
+            <p>-2x > 6</p>
+            <p>÷ -2 ⇒ x < -3</p>
+        </div>
+
+        <h2>🧊 سادساً: حل المتباينات التي تحتوي على كسور</h2>
+        <div class="example">
+            <p>x/3 + 2 ≤ 5</p>
+            <p>⇒ x/3 ≤ 3</p>
+            <p>⇒ x ≤ 9</p>
+        </div>
+
+        <h2>🧱 سابعاً: متباينات متعددة الخطوات</h2>
+        <div class="example">
+            <p>2x - 5 > 3x + 4</p>
+            <p>ننقل الحدود:</p>
+            <p>-5 - 4 > 3x - 2x</p>
+            <p>⇒ -9 > x</p>
+            <p>⇒ x < -9</p>
+        </div>
+
+        <div class="note">
+            <p>✨ لاحظ أننا نحافظ على اتجاه الإشارة طالما لم نضرب أو نقسم في عدد سالب.</p>
+        </div>
+
+        <h2>🔄 ثامناً: المتباينات المركبة</h2>
+        <div class="example">
+            <h3>نوع 1:</h3>
+            <p>3 < x ≤ 7</p>
+            <p>هذا يعني أن x أكبر من 3 وأقل من أو يساوي 7</p>
+
+            <h3>نوع 2: استخدام "أو"</h3>
+            <p>x < -2 أو x > 5</p>
+            <p>يعني أن الحل يكون أحد الطرفين فقط</p>
+        </div>
+
+        <h2>🧩 تاسعاً: مسائل حياتية على المتباينات</h2>
+        <div class="example">
+            <h3>مثال 1:</h3>
+            <p>يدّخر مازن 5 ريالات يومياً. إذا أراد أن يجمع 100 ريال على الأقل، فكم يوماً يحتاج؟</p>
+            <p>5x ≥ 100</p>
+            <p>⇒ x ≥ 20</p>
+            <p>إذن: يحتاج إلى 20 يوماً على الأقل.</p>
+
+            <h3>مثال 2:</h3>
+            <p>تقول إحدى القوانين: لا يجب أن تزيد سرعة السيارة عن 80 كم/س.</p>
+            <p>هذا يُكتب: v ≤ 80</p>
+        </div>
+
+        <h2>📝 عاشراً: تمارين تدريبية</h2>
+        <div class="practice">
+            <div class="question">
+                <p>1. حل المتباينة: x - 3 > 7</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" onclick="checkAnswer(1, 'a', 'a')"> a) x > 10</label>
+                    <label><input type="radio" name="q1" onclick="checkAnswer(1, 'b', 'a')"> b) x < 10</label>
+                    <label><input type="radio" name="q1" onclick="checkAnswer(1, 'c', 'a')"> c) x = 10</label>
+                </div>
+                <div id="result-1" class="result"></div>
+            </div>
+
+            <div class="question">
+                <p>2. حل المتباينة: -4x ≤ 20</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" onclick="checkAnswer(2, 'a', 'b')"> a) x > -5</label>
+                    <label><input type="radio" name="q2" onclick="checkAnswer(2, 'b', 'b')"> b) x ≥ -5</label>
+                    <label><input type="radio" name="q2" onclick="checkAnswer(2, 'c', 'b')"> c) x ≤ -5</label>
+                </div>
+                <div id="result-2" class="result"></div>
+            </div>
+        </div>
+
+        <h2>🧠 ملخص الدرس</h2>
+        <div class="note">
+            <ul>
+                <li>المتباينة تشبه المعادلة لكنها تمثّل علاقة غير متساوية.</li>
+                <li>رموز المتباينات توضح العلاقة بين الطرفين (>، <، ≥، ≤).</li>
+                <li>عند الضرب أو القسمة بعدد سالب، يجب عكس الإشارة.</li>
+                <li>يمكن تمثيل المتباينات بيانياً باستخدام خط الأعداد.</li>
+                <li>يمكن استخدام المتباينات لحل مشكلات يومية كالتوفير، السرعة، أو الميزانية.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
