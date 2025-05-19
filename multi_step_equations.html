@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حل المعادلات متعددة الخطوات - دروس الجبر</title>
+    <style>
+        :root {
+            --primary-color: #34495e;
+            --secondary-color: #3498db;
+            --accent-color: #16a085;
+            --background-color: #ecf0f1;
+            --text-color: #2c3e50;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            --gradient-primary: linear-gradient(135deg, #34495e, #2c3e50);
+            --card-bg: rgba(255, 255, 255, 0.98);
+            --note-bg: #e8f6f3;
+            --note-border: #16a085;
+            --example-bg: #f7f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            margin: 30px 0 15px;
+        }
+
+        h3 {
+            color: var(--accent-color);
+            margin: 20px 0 10px;
+        }
+
+        .note {
+            background-color: var(--note-bg);
+            border-right: 4px solid var(--note-border);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+        }
+
+        .example {
+            background-color: var(--example-bg);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+        }
+
+        .equation {
+            direction: ltr;
+            text-align: center;
+            font-family: 'Times New Roman', serif;
+            font-size: 1.2em;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: var(--border-radius);
+        }
+
+        .step {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: var(--border-radius);
+        }
+
+        .english-term {
+            display: inline-block;
+            font-size: 0.9em;
+            color: #2980b9;
+            background-color: #ebf5fb;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin: 0 4px;
+            font-weight: 500;
+        }
+
+        .warning {
+            background-color: #fff3cd;
+            border-right: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+        }
+
+        .practice {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>حل المعادلات متعددة الخطوات <span class="english-term">(Solving Multi-Step Equations)</span></h1>
+            <p>بسم الله الرحمن الرحيم</p>
+
+        </div>
+
+        <h2>مقدمة</h2>
+        <div class="note">
+            <p>في الدرس السابق تعلمنا حل المعادلات ذات الخطوة الواحدة. اليوم سنتعلم كيفية حل المعادلات المتعددة الخطوات وهي معادلات تحتوي أكثر من عملية رياضية واحدة وتتطلب أكثر من خطوة واحدة من أجل حلها.</p>
+        </div>
+
+        <h2>🎯 أهداف الدرس</h2>
+        <div class="note">
+            <p>بنهاية هذا الدرس، سيكون الطالب قادرًا على:</p>
+            <ul>
+                <li>فهم معنى المعادلات متعددة الخطوات</li>
+                <li>حل المعادلات التي تحتوي على أكثر من عملية حسابية</li>
+                <li>التعامل مع المعادلات التي تحتوي على أقواس</li>
+                <li>التحقق من صحة الحل</li>
+                <li>تطبيق المهارات على مسائل حياتية</li>
+            </ul>
+        </div>
+
+        <h2>🧠 أولاً: المفاهيم الأساسية</h2>
+        <div class="example">
+            <h3>🔹 ما هي المعادلة؟</h3>
+            <p>المعادلة هي جملة رياضية تحتوي على علامة مساواة (=). مثلًا:</p>
+            <div class="equation">2x + 3 = 11</div>
+
+            <h3>🔹 ما المقصود بـ"معادلة متعددة الخطوات" <span class="english-term">(Multi-Step Equation)</span>?</h3>
+            <p>هي معادلة تحتاج لأكثر من خطوة واحدة لحلها، وقد تشمل:</p>
+            <ul>
+                <li>الجمع والطرح <span class="english-term">(Addition and Subtraction)</span></li>
+                <li>الضرب والقسمة <span class="english-term">(Multiplication and Division)</span></li>
+                <li>توزيع الأقواس <span class="english-term">(Distributive Property)</span></li>
+                <li>تجميع الحدود المتشابهة <span class="english-term">(Combining Like Terms)</span></li>
+            </ul>
+        </div>
+
+        <h2>📘 ثانياً: خطوات الحل العامة <span class="english-term">(General Solving Steps)</span></h2>
+        <div class="note">
+            <ul>
+                <li>✅ تبسيط الطرفين <span class="english-term">(Simplify Both Sides)</span></li>
+                <li>➡️ التخلص من الجمع أو الطرح <span class="english-term">(Remove Addition/Subtraction)</span></li>
+                <li>✖️➗ التخلص من الضرب أو القسمة <span class="english-term">(Remove Multiplication/Division)</span></li>
+                <li>🔁 التحقق من الحل <span class="english-term">(Check Solution)</span></li>
+            </ul>
+        </div>
+
+        <h2>أمثلة محلولة <span class="english-term">(Solved Examples)</span></h2>
+        
+        <div class="example">
+            <h3>مثال 1 <span class="english-term">(Example 1)</span>: حل المعادلة 10 = 2x + 6</h3>
+            <div class="step">
+                <p>الخطوات <span class="english-term">(Steps)</span>:</p>
+                <ol>
+                    <li>نطرح 6 من الطرفين: 10 - 6 = 2x</li>
+                    <li>4 = 2x</li>
+                    <li>نقسم على 2: x = 2</li>
+                </ol>
+                <p>للتحقق <span class="english-term">(Verification)</span>: نعوض x = 2 في المعادلة الأصلية</p>
+                <p>10 = 2(2) + 6</p>
+                <p>10 = 4 + 6 = 10 ✓</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h3>مثال 2 <span class="english-term">(Example 2)</span>: حل المعادلة x/3 - 5 = 7</h3>
+            <div class="step">
+                <p>الخطوات <span class="english-term">(Steps)</span>:</p>
+                <ol>
+                    <li>نضيف 5 للطرفين: x/3 = 12</li>
+                    <li>نضرب الطرفين في 3: x = 36</li>
+                </ol>
+                <p>للتحقق <span class="english-term">(Verification)</span>: نعوض x = 36 في المعادلة الأصلية</p>
+                <p>36/3 - 5 = 7</p>
+                <p>12 - 5 = 7 ✓</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example">
+            <h3>مثال 3: حل المعادلة m + 5/-2 = 18</h3>
+            <div class="step">
+                <p>الخطوات <span class="english-term">(Steps)</span>:</p>
+                <ol>
+                    <li>نضرب طرفي المعادلة بسالب 2: (m + 5)/-2 × (-2) = 18 × (-2)</li>
+                    <li>m + 5 = -36</li>
+                    <li>نطرح 5 من الطرفين: m = -41</li>
+                </ol>
+                <p>للتحقق <span class="english-term">(Verification)</span>: نعوض m = -41 في المعادلة الأصلية</p>
+                <p>(-41 + 5)/-2 = 18</p>
+                <p>-36/-2 = 18</p>
+                <p>18 = 18 ✓</p>
+            </div>
+        </div>
+        </div>
+
+        <h2>🌍 خامساً: تطبيقات حياتية <span class="english-term">(Real-Life Applications)</span></h2>
+        <div class="example">
+            <p>📌 مثال واقعي <span class="english-term">(Real-World Example)</span>:</p>
+            <p>إذا اشتريت 3 دفاتر وسعر الدفتر الواحد هو x ريالًا، ودفعك الكلي كان 27 ريالًا، فالمعادلة:</p>
+            <div class="equation">3x = 27 <span class="english-term">(Price Equation)</span></div>
+            <p>الحل <span class="english-term">(Solution)</span>: x = 9 ريالات</p>
+        </div>
+
+        <h2>🧠 سادساً: تمارين تدريبية</h2>
+        <div class="example">
+            <h3>مثال على حل معادلة متعددة الخطوات:</h3>
+            <p>حل المعادلة: 3x + 8 + 5x = 32</p>
+            <div class="step">
+                <p>الخطوات <span class="english-term">(Steps)</span>:</p>
+                <ol>
+                    <li>نجمع الحدود المتشابهة: 3x + 5x = 8x</li>
+                    <li>تصبح المعادلة: 8x + 8 = 32</li>
+                    <li>نطرح 8 من الطرفين: 8x = 24</li>
+                    <li>نقسم على 8: x = 3</li>
+                </ol>
+                <p>للتحقق <span class="english-term">(Verification)</span>: نعوض x = 3 في المعادلة الأصلية</p>
+                <p>3(3) + 8 + 5(3) = 32</p>
+                <p>9 + 8 + 15 = 32 ✓</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h3>مثال 3: حل المعادلة m + 5/-2 = 18</h3>
+            <div class="step">
+                <p>الخطوات <span class="english-term">(Steps)</span>:</p>
+                <ol>
+                    <li>نضرب طرفي المعادلة بسالب 2: (m + 5)/-2 × (-2) = 18 × (-2)</li>
+                    <li>m + 5 = -36</li>
+                    <li>نطرح 5 من الطرفين: m = -41</li>
+                </ol>
+                <p>للتحقق <span class="english-term">(Verification)</span>: نعوض m = -41 في المعادلة الأصلية</p>
+                <p>(-41 + 5)/-2 = 18</p>
+                <p>-36/-2 = 18</p>
+                <p>18 = 18 ✓</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h3>مثال 4 <span class="english-term">(Example 4)</span>: حل المعادلة 7F = 4F + 12</h3>
+            <div class="step">
+                <ol>
+                    <li>نطرح 4F من الطرفين: 7F - 4F = (4F - 4F) + 12</li>
+                    <li>نبسط: 3F = 12</li>
+                    <li>نقسم على 3: F = 4</li>
+                </ol>
+                <p>للتحقق <span class="english-term">(Verification)</span>: نعوض F = 4</p>
+                <p>7(4) = 4(4) + 12</p>
+                <p>28 = 16 + 12 ✓</p>
+            </div>
+        </div>
+
+        <h2>⚠️ سادساً: أخطاء شائعة <span class="english-term">(Common Mistakes)</span></h2>
+        <div class="warning">
+            <ul>
+                <p>نسيان توزيع الضرب على كل من داخل القوس <span class="english-term">(Forgetting Distribution)</span></li>
+                <li>الخطأ في ترتيب العمليات <span class="english-term">(Order of Operations)</span></li>
+                <li>نسيان إجراء نفس العملية على طرفي المعادلة <span class="english-term">(Same Operation on Both Sides)</span></li>
+                <li>الخطأ في الإشارات عند نقل الحدود من طرف إلى آخر <span class="english-term">(Sign Errors)</span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
