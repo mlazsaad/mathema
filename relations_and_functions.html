@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العلاقات والدوال - Algebra Course</title>
+    <style>
+        :root {
+            --primary-color: #34495e;
+            --secondary-color: #3498db;
+            --accent-color: #16a085;
+            --background-color: #ecf0f1;
+            --text-color: #2c3e50;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            --gradient-primary: linear-gradient(135deg, #34495e, #2c3e50);
+            --card-bg: rgba(255, 255, 255, 0.98);
+            --note-bg: #e8f6f3;
+            --note-border: #16a085;
+            --example-bg: #f7f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: right;
+            border: 1px solid #e0e0e0;
+        }
+
+        th {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: var(--example-bg);
+        }
+
+        .exercise {
+            background: var(--note-bg);
+            border-right: 4px solid var(--note-border);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: var(--border-radius);
+        }
+
+        .answer {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        ul, ol {
+            padding-right: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--primary-color);
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+        }
+
+        .english-term {
+            color: var(--secondary-color);
+            font-size: 0.9em;
+        }
+
+        .video-script {
+            background: var(--note-bg);
+            border-right: 4px solid var(--note-border);
+            padding: 2rem;
+            margin: 1rem 0;
+            border-radius: var(--border-radius);
+            font-size: 1.1em;
+        }
+
+        .video-script ul, .video-script ol {
+            padding-right: 2rem;
+            margin: 1rem 0;
+        }
+
+        .video-script pre {
+            background: white;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+            direction: ltr;
+            text-align: left;
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+    <div class="header">
+        <h1>العلاقات والدوال <span class="english-term">(Relations and Functions)</span></h1>
+    </div>
+
+    <main>
+        <section>
+            <h2 style="color: var(--accent-color);">🧩 أولاً: المفاهيم الأساسية <span class="english-term">(Basic Concepts)</span></h2>
+            <h3 style="color: var(--secondary-color);">🔹 العلاقة <span class="english-term">(Relation)</span></h3>
+            <p>هي مجموعة من الأزواج المرتبة (x, y). يمكن تعريف العلاقة بطرق متعددة (قائمة، جدول، رسم، قاعدة...).</p>
+            <ul>
+                <li>المجال (Domain): مجموعة كل قيم x.</li>
+                <li>المدى (Range): مجموعة كل قيم y.</li>
+                <li>الزوج المرتب: عنصر في العلاقة يمثل ارتباط عنصر من المجال بعنصر من المدى.</li>
+            </ul>
+
+            <h3 style="color: var(--secondary-color);">🔹 الدالة <span class="english-term">(Function)</span></h3>
+            <p>الدالة هي علاقة كل عنصر من المجال يقترن بعنصر واحد فقط من المدى.</p>
+            <ul>
+                <li>✅ كل دالة هي علاقة</li>
+                <li>❌ ليست كل علاقة دالة</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 style="color: var(--secondary-color);">📊 ثانيًا: طرق تمثيل العلاقات والدوال <span class="english-term">(Methods of Representing Relations and Functions)</span></h2>
+            <table>
+                <tr>
+                    <th>الطريقة</th>
+                    <th>الوصف</th>
+                    <th>مثال</th>
+                </tr>
+                <tr>
+                    <td>قائمة</td>
+                    <td>كتابة الأزواج المرتبة</td>
+                    <td>{(1, 2), (2, 4)}</td>
+                </tr>
+                <tr>
+                    <td>جدول</td>
+                    <td>عرض x و y في جدول</td>
+                    <td>x: 1, 2 — y: 2, 4</td>
+                </tr>
+                <tr>
+                    <td>سهمي</td>
+                    <td>ربط عناصر المجال بالمدى بأسهم</td>
+                    <td>1 ⟶ 2، 2 ⟶ 4</td>
+                </tr>
+                <tr>
+                    <td>رسم بياني</td>
+                    <td>تمثيل الأزواج على المستوى الإحداثي</td>
+                    <td>(1, 2), (2, 4)</td>
+                </tr>
+                <tr>
+                    <td>قاعدة</td>
+                    <td>صيغة رياضية</td>
+                    <td>\(f(x) = 2x\)</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2 style="color: var(--accent-color);">✅ ثالثًا: اختبار الدالة <span class="english-term">(Function Testing)</span></h2>
+            <h3 style="color: var(--secondary-color);">🔍 اختبار الجدول <span class="english-term">(Table Test)</span></h3>
+            <p>تأكد أن كل x تقابل y واحدة فقط.</p>
+
+            <h3 style="color: var(--secondary-color);">📈 اختبار الرسم البياني <span class="english-term">(Vertical Line Test)</span></h3>
+            <p>اختبار الخط العمودي: إذا قطع الخط العمودي الرسم في أكثر من نقطة واحدة → ليست دالة.</p>
+        </section>
+
+        <section>
+            <h2 style="color: var(--secondary-color);">🧮 رابعًا: خصائص الدوال <span class="english-term">(Function Properties)</span></h2>
+            <table>
+                <tr>
+                    <th>الخاصية</th>
+                    <th>التعريف</th>
+                    <th>مثال</th>
+                </tr>
+                <tr>
+                    <td>الدالة المتزايدة</td>
+                    <td>إذا زادت x فإن y تزيد</td>
+                    <td>\(f(x) = x\)</td>
+                </tr>
+                <tr>
+                    <td>الدالة المتناقصة</td>
+                    <td>إذا زادت x فإن y تقل</td>
+                    <td>\(f(x) = -x\)</td>
+                </tr>
+                <tr>
+                    <td>الدالة الزوجية</td>
+                    <td>\(f(-x) = f(x)\)</td>
+                    <td>\(f(x) = x^2\)</td>
+                </tr>
+                <tr>
+                    <td>الدالة الفردية</td>
+                    <td>\(f(-x) = -f(x)\)</td>
+                    <td>\(f(x) = x^3\)</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2 style="color: var(--accent-color);">🧠 خامسًا: أنواع الدوال <span class="english-term">(Types of Functions)</span></h2>
+            <table>
+                <tr>
+                    <th>النوع</th>
+                    <th>الصيغة العامة</th>
+                    <th>الرسم البياني</th>
+                    <th>مثال</th>
+                </tr>
+                <tr>
+                    <td>خطية</td>
+                    <td>\(f(x) = ax + b\)</td>
+                    <td>خط مستقيم</td>
+                    <td>\(f(x) = 3x + 1\)</td>
+                </tr>
+                <tr>
+                    <td>تربيعية</td>
+                    <td>\(f(x) = ax^2 + bx + c\)</td>
+                    <td>قطع مكافئ</td>
+                    <td>\(f(x) = x^2\)</td>
+                </tr>
+                <tr>
+                    <td>جذرية</td>
+                    <td>\(f(x) = \sqrt{x}\)</td>
+                    <td>نصف منحنى</td>
+                    <td>\(f(x) = \sqrt{x}\)</td>
+                </tr>
+                <tr>
+                    <td>كسرية</td>
+                    <td>\(f(x) = \frac{1}{x}\)</td>
+                    <td>منحنيين</td>
+                    <td>\(f(x) = \frac{1}{x}\)</td>
+                </tr>
+                <tr>
+                    <td>قيمة مطلقة</td>
+                    <td>\(f(x) = |x|\)</td>
+                    <td>منحنى V</td>
+                    <td>\(f(x) = |x|\)</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2 style="color: var(--secondary-color);">🔄 سادسًا: أنواع العلاقات <span class="english-term">(Types of Relations)</span></h2>
+            <table>
+                <tr>
+                    <th>النوع</th>
+                    <th>الوصف</th>
+                </tr>
+                <tr>
+                    <td>واحد إلى واحد</td>
+                    <td>كل x لها y واحدة، والعكس صحيح</td>
+                </tr>
+                <tr>
+                    <td>واحد إلى متعدد</td>
+                    <td>كل x لها أكثر من y (❌ ليست دالة)</td>
+                </tr>
+                <tr>
+                    <td>متعدد إلى واحد</td>
+                    <td>أكثر من x لها نفس y (✅ دالة)</td>
+                </tr>
+                <tr>
+                    <td>متعدد إلى متعدد</td>
+                    <td>أكثر من x تقترن بأكثر من y (❌ ليست دالة)</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2 style="color: var(--accent-color);">🔁 سابعًا: العمليات على الدوال <span class="english-term">(Operations on Functions)</span></h2>
+            <p>إذا كانت لديك دالتان:</p>
+            <p>\[f(x) = 2x\]</p>
+            <p>\[g(x) = x + 3\]</p>
+
+            <ol>
+                <li>الجمع:
+                    <p>\[(f + g)(x) = f(x) + g(x) = 2x + x + 3 = 3x + 3\]</p>
+                </li>
+                <li>الطرح:
+                    <p>\[(f - g)(x) = 2x - (x + 3) = x - 3\]</p>
+                </li>
+                <li>الضرب:
+                    <p>\[(f × g)(x) = 2x × (x + 3) = 2x^2 + 6x\]</p>
+                </li>
+                <li>القسمة:
+                    <p>\[(f ÷ g)(x) = \frac{2x}{x + 3}, \text{ بشرط } x \neq -3\]</p>
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h2 style="color: var(--secondary-color);">📐 ثامنًا: التركيب بين الدوال <span class="english-term">(Function Composition)</span></h2>
+            <p>نعني به:</p>
+            <p>\[(f \circ g)(x) = f(g(x))\]</p>
+
+            <h3>✅ مثال:</h3>
+            <p>\[f(x) = 2x, g(x) = x + 1\]</p>
+            <p>\[\rightarrow f(g(x)) = 2(x + 1) = 2x + 2\]</p>
+        </section>
+
+        <section>
+            <h2 style="color: var(--accent-color);">🧭 تاسعًا: تطبيقات حياتية <span class="english-term">(Real-life Applications)</span></h2>
+            <table>
+                <tr>
+                    <th>التطبيق</th>
+                    <th>نوع العلاقة</th>
+                </tr>
+                <tr>
+                    <td>الوقت والمسافة</td>
+                    <td>دالة خطية</td>
+                </tr>
+                <tr>
+                    <td>استهلاك الكهرباء</td>
+                    <td>دالة متزايدة</td>
+                </tr>
+                <tr>
+                    <td>عدد الأيام في كل شهر</td>
+                    <td>علاقة (ليست دالة بالضرورة)</td>
+                </tr>
+                <tr>
+                    <td>درجة الحرارة كل ساعة</td>
+                    <td>دالة، ولكن ليست دائمًا خطية</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2 style="color: var(--secondary-color);">📝 عاشرًا: تدريبات وتقييم ذاتي <span class="english-term">(Exercises and Self-Assessment)</span></h2>
+            <div class="exercise">
+                <h3>🔶 تدريب 1:</h3>
+                <p>هل العلاقة {(1, 4), (2, 5), (3, 6)} دالة؟</p>
+                <p class="answer">✅ نعم</p>
+            </div>
+
+            <div class="exercise">
+                <h3>🔶 تدريب 2:</h3>
+                <p>مثل بيانيًا الدالة \(f(x) = x^2 - 1\)</p>
+                <p class="answer">↪ نقاط: (-2, 3), (-1, 0), (0, -1), (1, 0), (2, 3)</p>
+            </div>
+
+            <div class="exercise">
+                <h3>🔶 تدريب 3:</h3>
+                <p>أوجد \((f + g)(x)\) إذا كانت \(f(x) = 3x\)، \(g(x) = x^2\)</p>
+                <p class="answer">↪ الناتج: \(3x + x^2\)</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 style="color: var(--accent-color);">📌 ملخص بصري سريع <span class="english-term">(Quick Visual Summary)</span></h2>
+            <ul>
+                <li>العلاقة = مجموعة من الأزواج المرتبة</li>
+                <li>الدالة = علاقة حيث كل x لها y واحدة فقط</li>
+                <li>أنواع التمثيل: جدول – رسم – قاعدة – سهمي</li>
+                <li>اختبار الدالة = خط عمودي</li>
+                <li>أنواع الدوال: خطية – تربيعية – جذرية – كسرية – مطلقة</li>
+                <li>الدوال لها خصائص: تزايد، تناقص، زوجية، فردية</li>
+                <li>يمكن جمع وطرح وضرب وقسمة وتركيب الدوال</li>
+            </ul>
+        </section>
+    </main>
+
+    <section>
+        <h2 style="color: var(--accent-color);">🎥 نص الفيديو التعليمي <span class="english-term">(Video Script)</span></h2>
+        <div class="video-script" style="white-space: pre-line; line-height: 1.8;">
+الدرس السابع من أساسيات الجبر: العلاقات والدوال
+
+العلاقات:
+عادةً بنشير إلى ارتباط عددين بالشكل XY وهذا الشكل اللي نطلق عليه اسم زوج مرتب (Ordered Pair). هذا الرمز يعني أن X مرتبط بY.
+
+هنا ترتيب الرمزين مهم جداً:
+• الرقم الأول يسمى قيمة مدخلة (Input)
+• الرقم الثاني قيمة مخرجة (Output)
+
+أيضاً يمكن أن نسمي:
+• X الإحداث الأول و Y الإحداث الثاني
+• X المسقط الأول و Y المسقط الثاني
+• في بعض المناهج المدرسية العربية X تسمى الإحداث السيني و Y تسمى الإحداث الصادي
+
+العلاقة هي مجموعة من الأزواج المرتبة وهي تعبر عن ربط مجموعة من العناصر تسمى مدخلات مع مجموعة أخرى تسمى مخرجات.
+
+أشكال تمثيل العلاقة:
+لدينا العلاقة التالية والممثلة بشكل مجموعة من الأزواج المرتبة: {(1,3), (2,4), (3,5)}
+في هذه العلاقة نقول أن:
+• 1 مرتبط بثلاثة
+• 2 مرتبط بأربعة
+• 3 مرتبط بخمسة
+
+يمكن تمثيل العلاقة بعدة أشكال:
+1. شكل جدولي:
+   X | Y
+   1 | 3
+   2 | 4
+   3 | 5
+
+2. مخطط سهمي:
+   نضع جميع قيم X في مجموعة المدخلات وكل قيم Y في مجموعة المخرجات ونرسم سهم من كل قيمة مدخلة X إلى القيمة المخرجة Y المتوافقة معها.
+
+3. رسم بياني على مستوى إحداثيات:
+   نستخدم قيم إحداثيات X و Y لرسم الأزواج المرتبة:
+   • النقطة (1,3)
+   • النقطة (2,4)
+   • النقطة (3,5)
+
+4. معادلة:
+   في هذه العلاقة: Y = X + 2
+   لاحظ أن كل قيمة Y في كل زوج مرتب أكبر من قيمة X بـ 2
+
+المجال والمدى:
+• المجال (Domain): {1, 2, 3}
+• المدى (Range): {3, 4, 5}
+
+اختبار الدالة:
+لتحديد إذا كانت العلاقة دالة أم لا، نستخدم اختبار الخط الرأسي (Vertical Line Test):
+• إذا قطع الخط الرأسي الرسم البياني في أكثر من نقطة → ليست دالة
+• إذا قطع الخط الرأسي الرسم البياني في نقطة واحدة فقط في كل مرة → دالة
+
+إلى اللقاء في الدرس القادم!</div>
+    </section>
+
+    <footer>
+        <p>© 2025 Math Course</p>
+    </footer>
+    </div>
+</body>
+</html>
